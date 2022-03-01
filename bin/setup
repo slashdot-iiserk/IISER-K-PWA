@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+# setup git flow
+git flow init -d
+git config gitflow.prefix.versiontag "v"
