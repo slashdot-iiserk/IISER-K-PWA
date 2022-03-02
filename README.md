@@ -28,7 +28,7 @@ Then follow the [Setup](##setup) section.
 - Run the `bin/setup` script (make sure that that you do not have any uncommited changes while running this, if you do have them, stage them). This sets up git-flow for you.
 - Make sure that you have [node.js](https://nodejs.org/en/download/) and [yarn](https://classic.yarnpkg.com/lang/en/docs/install/#debian-stable) installed. You can check for the same by running `node -v` and `yarn -v`. If you have them installed you will get a version number without error.
 - Run `yarn install`. This should install all necessary packages into a `node_modules` folder.
-- Run `yarn start` to see if you are able to run the react app. If you did not face
+- Run `yarn dev` to see if you are able to run the react app. If you did not face
   any errors you are good to go.
 
 ### VS Code
