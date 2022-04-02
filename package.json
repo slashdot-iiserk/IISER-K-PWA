@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "vite",
     "build": "rimraf dist/* & tsc && vite build",
-    "preview": "yarn build && vite preview",
+    "preview": "vite preview",
+    "serve": "yarn build && yarn preview",
     "commit": "cz"
   },
   "dependencies": {
