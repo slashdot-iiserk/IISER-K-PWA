@@ -7,7 +7,8 @@
     "build": "rimraf dist/* & tsc && vite build",
     "preview": "vite preview",
     "serve": "yarn build && yarn preview",
-    "commit": "cz"
+    "commit": "cz",
+    "prepare": "husky install"
   },
   "dependencies": {
     "react": "^17.0.0",
@@ -30,6 +31,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.27.0",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "husky": "^7.0.0",
     "prettier": "^2.4.1",
     "rimraf": "^3.0.2",
     "typescript": "^4.3.2",
