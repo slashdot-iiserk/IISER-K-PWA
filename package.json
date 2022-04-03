@@ -10,6 +10,11 @@
     "commit": "cz",
     "prepare": "husky install"
   },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
   "lint-staged": {
     "*": "prettier --write",
     "src/*": "eslint -c .eslintrc.json --fix"
@@ -44,10 +49,5 @@
     "vite-plugin-pwa": "^0.11.13",
     "vite-tsconfig-paths": "^3.3.17",
     "workbox-precaching": "^6.5.2"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
   }
 }
