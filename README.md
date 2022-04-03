@@ -2,6 +2,8 @@
 
 An one stop app for [IISER K](https://www.iiserkol.ac.in/web/en/) students
 
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+
 ## Getting Started
 
 To get started, clone the repository locally on your pc.
