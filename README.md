@@ -24,8 +24,6 @@ Then follow the [Setup](##setup) section.
 
 **It is highly recommended that you use linux**. Some things might not work right away on Windows. If you are on Windows, you can use try WSL.
 
-- Make sure you have [git-flow](https://github.com/nvie/gitflow/wiki/Installation) installed.
-- Run the `bin/setup` script (make sure that that you do not have any uncommited changes while running this, if you do have them, stage them). This sets up git-flow for you.
 - Make sure that you have [node.js](https://nodejs.org/en/download/) and [yarn](https://classic.yarnpkg.com/lang/en/docs/install/#debian-stable) installed. You can check for the same by running `node -v` and `yarn -v`. If you have them installed you will get a version number without error.
 - Run `yarn install`. This should install all necessary packages into a `node_modules` folder.
 - Run `yarn dev` to see if you are able to run the react app. If you did not face
@@ -104,9 +102,13 @@ Runs the app in the dev mode ,i.e. all changes are live-reloaded. Open [http://l
 
 Builds the app for production to the `dist` folder.
 
+`yarn preview`
+
+Serves the content of `dist` folder. Open [http://localhost:5000](http://localhost:5000) to view it in the browser.
+
 `yarn serve`
 
-Serves the content of `dist` folder. all changes are live-reloaded. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Builds the app for production to the `dist` folder and serves the content of `dist` folder. Open [http://localhost:5000](http://localhost:5000) to view it in the browser.
 
 `yarn commit`
 
