@@ -2,6 +2,8 @@
 
 An one stop app for [IISER K](https://www.iiserkol.ac.in/web/en/) students
 
+You can find the **development version** of the app [here](https://iiser-k-pwa.vercel.app/).
+
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
 ## Getting Started
