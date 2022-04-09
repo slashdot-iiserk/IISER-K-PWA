@@ -1,10 +1,14 @@
 import { useState } from 'react';
-import { AppShell, Text, useMantineTheme } from '@mantine/core';
+import { AppShell, useMantineTheme } from '@mantine/core';
 import { useThemedValue } from '../hooks';
 import Navbar from './Navbar';
 import Header from './Header';
 
-function Scaffold() {
+interface ScaffoldProps {
+  children: React.ReactChild | React.ReactChildren;
+}
+
+function Scaffold({ children }: ScaffoldProps) {
   const theme = useMantineTheme();
   const [navbarIsOpen, setNavbarIsOpen] = useState(false);
   const toggleNavbar = () => setNavbarIsOpen((state) => !state);
@@ -27,7 +31,7 @@ function Scaffold() {
         <Header navbarState={navbarIsOpen} navbarController={toggleNavbar} />
       }
     >
-      <Text align="center">Welcome To IISERK App</Text>
+      {children}
     </AppShell>
   );
 }

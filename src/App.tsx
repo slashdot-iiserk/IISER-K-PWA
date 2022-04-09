@@ -3,6 +3,7 @@ import {
   MantineProvider,
   ColorSchemeProvider,
   ColorScheme,
+  Text,
 } from '@mantine/core';
 import './App.css';
 import Scaffold from './Scaffold';
@@ -18,7 +19,9 @@ function App() {
       toggleColorScheme={toggleColorScheme}
     >
       <MantineProvider theme={{ colorScheme }}>
-        <Scaffold />
+        <Scaffold>
+          <Text align="center">Welcome To IISERK App</Text>
+        </Scaffold>
       </MantineProvider>
     </ColorSchemeProvider>
   );
