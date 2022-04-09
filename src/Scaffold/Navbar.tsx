@@ -1,5 +1,14 @@
 import { Navbar as MantineNavbar, Text, useMantineTheme } from '@mantine/core';
+import { Link } from '@tanstack/react-location';
 import { useThemedValue } from '../hooks';
+
+function getActiveProps() {
+  return {
+    style: {
+      fontWeight: 'bold',
+    },
+  };
+}
 
 type NavElement = {
   path: string;
@@ -22,7 +31,18 @@ function Navbar({ isOpen }: { isOpen: boolean }) {
     >
       {navData.map(({ path, title }) => (
         <MantineNavbar.Section p="xs" key={title}>
-          <Text color={useThemedValue(theme.white, theme.black)}>{title}</Text>
+          <Link
+            to={path}
+            style={{
+              textDecoration: 'none',
+            }}
+            getActiveProps={getActiveProps}
+            activeOptions={{ exact: true }}
+          >
+            <Text color={useThemedValue(theme.white, theme.black)}>
+              {title}
+            </Text>
+          </Link>
         </MantineNavbar.Section>
       ))}
     </MantineNavbar>
