@@ -46,6 +46,7 @@ It is recommended that you use [VSCode](https://code.visualstudio.com/) for this
 
   - [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
   - [Volar](https://marketplace.visualstudio.com/items?itemName=vue.volar)
+  - [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
   - [ESlint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
   - [Better Comments](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments)
   - [Visual Studio Code Commitizen Support](https://marketplace.visualstudio.com/items?itemName=knisterpeter.vscode-commitizen)
