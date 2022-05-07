@@ -21,8 +21,8 @@
     }
   },
   "lint-staged": {
-    "*": "prettier --write",
-    "src/*": "eslint --fix"
+    "!*.svg": "prettier --write",
+    "*.(vue|js|jsx|cjs|mjs|ts|tsx|cts|mts)": "eslint --fix"
   },
   "dependencies": {
     "pinia": "^2.0.13",
