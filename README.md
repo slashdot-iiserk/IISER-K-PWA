@@ -28,28 +28,33 @@ Then follow the [Setup](##setup) section.
 
 ## Setup
 
-**It is highly recommended that you use linux**. Some things might not work right away on Windows. If you are on Windows, you can use try WSL.
+**It is highly recommended that you use linux**. Some things might not work right away on Windows. If you are on Windows, you can use WSL.
 
 - Make sure that you have [node.js](https://nodejs.org/en/download/) and [yarn](https://classic.yarnpkg.com/lang/en/docs/install/#debian-stable) installed. You can check for the same by running `node -v` and `yarn -v`. If you have them installed you will get a version number without error.
 - Run `yarn install`. This should install all necessary packages into a `node_modules` folder.
 - Run `yarn dev` to see if you are able to run the react app. If you did not face
   any errors you are good to go.
 
-### VS Code
+### Recommended IDE Setup
+
+It is recommended that you use [VSCode](https://code.visualstudio.com/) for this project.
+[TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.vscode-typescript-vue-plugin).
 
 - You need to have the following extensions installed:
 
   Necessary
 
-  - Prettier - Code formatter
-  - ESlint
-  - Better Comments
-  - Visual Studio Code Commitizen Support
+  - [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+  - [Volar](https://marketplace.visualstudio.com/items?itemName=vue.volar)
+  - [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
+  - [ESlint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+  - [Better Comments](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments)
+  - [Visual Studio Code Commitizen Support](https://marketplace.visualstudio.com/items?itemName=knisterpeter.vscode-commitizen)
 
   Recommended
 
-  - GitLens — Git supercharged
-  - Git Graph
+  - [GitLens — Git supercharged](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
+  - [Git Graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph)
 
 - Create a workspace `settings.json` file in `.vscode` directory in the root of the project.
   You can do this by opening the command palette(`Ctrl`+`Shift`+`P`) and entering `Preferences: Open Workspace Settings (JSON)`.
@@ -59,63 +64,61 @@ Then follow the [Setup](##setup) section.
 
   ```json
   "editor.formatOnSave": true,
-
-  // formatter setup for frontend
-  "[html]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[css]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[scss]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascript]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascriptreact]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[json]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[jsonc]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.json-language-features"
   },
-  "[typescript]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescriptreact]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-
-  // enable emmet for react
-  "emmet.includeLanguages": {
-    "javascript": "javascriptreact"
-  }
-
   ```
 
 ## Available Scripts
 
 In the project root, you can run:
 
-`yarn dev`
+- Install (all) missing packages
 
-Runs the app in the dev mode ,i.e. all changes are live-reloaded. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  ```sh
+  yarn install
+  ```
 
-`yarn build`
+- Compile and Hot-Reload for Development
 
-Builds the app for production to the `dist` folder.
+  ```sh
+  yarn dev
+  ```
 
-`yarn preview`
+- Type-Check, Compile and Minify for Production
 
-Serves the content of `dist` folder. Open [http://localhost:5000](http://localhost:5000) to view it in the browser.
+  ```sh
+  yarn build
+  ```
 
-`yarn serve`
+- Open a preview of the build locally
 
-Builds the app for production to the `dist` folder and serves the content of `dist` folder. Open [http://localhost:5000](http://localhost:5000) to view it in the browser.
+  ```sh
+  yarn preview
+  ```
 
-`yarn commit`
+- Run Unit Tests with [Vitest](https://vitest.dev/)
 
-Open Commitizen menu
+  ```sh
+  yarn test:unit
+  ```
+
+- Run End-to-End Tests with [Cypress](https://www.cypress.io/)
+
+  ```sh
+  yarn build
+  yarn test:e2e # or `yarn test:e2e:ci` for headless testing
+  ```
+
+- Lint with [ESLint](https://eslint.org/)
+
+  ```sh
+  yarn lint
+  ```
+
+- Open Commitizen menu
+
+  ```sh
+  yarn commit
+  ```

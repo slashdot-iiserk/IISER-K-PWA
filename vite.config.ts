@@ -1,13 +1,22 @@
+import { fileURLToPath, URL } from 'url';
+
 import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+import vue from '@vitejs/plugin-vue';
+import vueJsx from '@vitejs/plugin-vue-jsx';
 import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig({
   preview: {
     port: 5000,
   },
+  resolve: {
+    alias: {
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
+    },
+  },
   plugins: [
-    react(),
+    vue(),
+    vueJsx(),
     VitePWA({
       manifest: {
         name: 'IISER Kolkata App',

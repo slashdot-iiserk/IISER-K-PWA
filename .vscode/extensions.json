@@ -1,0 +1,13 @@
+{
+  "recommendations": [
+    "vue.volar",
+    "vue.vscode-typescript-vue-plugin",
+    "bradlc.vscode-tailwindcss",
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "aaron-bond.better-comments",
+    "knisterpeter.vscode-commitizen",
+    "eamodio.gitlens",
+    "mhutchie.git-graph",
+  ]
+}
