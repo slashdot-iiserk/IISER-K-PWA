@@ -12,11 +12,11 @@ import MenuBars from '../components/icons/MenuBars.vue';
         </label>
       </button>
     </div>
-    <div class="flex-1">
+    <header class="flex-1">
       <slot name="header-main">
         <!-- Header Main Section -->
       </slot>
-    </div>
+    </header>
     <div class="flex-none lg:px-4">
       <slot name="header-right">
         <!-- Header Right Section -->
@@ -30,11 +30,11 @@ import MenuBars from '../components/icons/MenuBars.vue';
         <!-- Page content here -->
       </slot>
     </div>
-    <div class="drawer-side">
+    <nav class="drawer-side">
       <label for="drawer-handle" class="drawer-overlay"></label>
       <slot name="nav-panel">
         <!-- Navigation Panel Content -->
       </slot>
-    </div>
+    </nav>
   </div>
 </template>
