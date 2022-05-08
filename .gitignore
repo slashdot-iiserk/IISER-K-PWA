@@ -10,6 +10,8 @@
 
 # testing
 **/coverage
+/cypress/videos/
+/cypress/screenshots/
 
 # production
 **/build
@@ -24,7 +26,8 @@
 .env.production.local
 
 # editor settings
-**/.vscode/
+.vscode/*
+!.vscode/extensions.json
 
 # Logs
 logs
