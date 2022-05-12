@@ -2,6 +2,7 @@
 import { RouterLink, RouterView } from 'vue-router';
 import AppShell from './components/AppShell.vue';
 import MenuDots from './components/icons/MenuDots.vue';
+import UpdatePrompt from './components/UpdatePrompt.vue';
 </script>
 
 <template>
@@ -27,4 +28,5 @@ import MenuDots from './components/icons/MenuDots.vue';
       </template>
     </AppShell>
   </main>
+  <UpdatePrompt />
 </template>
