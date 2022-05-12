@@ -5,7 +5,7 @@ An one stop app for [IISER K](https://www.iiserkol.ac.in/web/en/) students
 You can find the **development version** of the app [here](https://iiser-k-pwa.vercel.app/).
 
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
-[![version](https://img.shields.io/badge/version-0.3.0-blue.svg)](https://semver.org)
+[![version](https://img.shields.io/badge/version-0.3.1-blue.svg)](https://semver.org)
 [![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
 
 ## Getting Started
