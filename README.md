@@ -65,9 +65,6 @@ It is recommended that you use [VSCode](https://code.visualstudio.com/) for this
   ```json
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "[jsonc]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  },
   ```
 
 ## Available Scripts
