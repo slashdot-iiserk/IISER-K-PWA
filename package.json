@@ -27,6 +27,7 @@
   "dependencies": {
     "lodash.pick": "^4.4.0",
     "pinia": "^2.0.13",
+    "swrv": "^1.0.0-beta.8",
     "vue": "^3.2.33",
     "vue-router": "^4.0.14"
   },
