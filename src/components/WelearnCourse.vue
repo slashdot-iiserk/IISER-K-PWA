@@ -1,19 +1,14 @@
 <script setup lang="ts">
-import useSWRV from 'swrv';
 import { WeLearnFetch } from '@/models/welearn/fetch';
+import useCachedFetch from '@/hooks/cachedFetch';
 
 const props = defineProps<{
   courseId: number;
   courseName: string;
 }>();
 
-const { data: course } = useSWRV(
-  `/welearn/course/${props.courseId}`,
-  () => WeLearnFetch.course(props.courseId),
-  {
-    // cache: localStorageCache,
-    dedupingInterval: 60 * 60 * 1000,
-  },
+const [course] = useCachedFetch(`/welearn/course/${props.courseId}`, () =>
+  WeLearnFetch.course(props.courseId),
 );
 </script>
 

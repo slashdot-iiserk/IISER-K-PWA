@@ -1,25 +1,11 @@
 WeLearnFetch
 <script setup lang="ts">
-import useSWRV from 'swrv';
-import LocalStorageCache from 'swrv/dist/cache/adapters/localStorage';
 import { WeLearnFetch } from '@/models/welearn/fetch';
+import useCachedFetch from '@/hooks/cachedFetch';
 
-const localStorageCache = new LocalStorageCache();
-const { data: info, error: infoError } = useSWRV(
-  '/welearn/info',
-  WeLearnFetch.info,
-  {
-    cache: localStorageCache,
-    dedupingInterval: 60 * 60 * 1000,
-  },
-);
-const { data: courses } = useSWRV(
-  '/welearn/courses',
-  () => WeLearnFetch.courses(info.value?.userid),
-  {
-    cache: localStorageCache,
-    dedupingInterval: 60 * 60 * 1000,
-  },
+const [info, infoError] = useCachedFetch('/welearn/info', WeLearnFetch.info);
+const [courses] = useCachedFetch('/welearn/courses', () =>
+  WeLearnFetch.courses(info.value?.userid),
 );
 </script>
 <template>
