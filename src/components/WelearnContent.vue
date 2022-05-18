@@ -33,11 +33,27 @@ const { data: courses } = useSWRV(
         :key="course.id"
         class="card-compact card card-bordered border-base-content"
       >
-        <div class="card-body">
-          <div v-if="course.category">
-            <div class="badge badge-secondary">Level {{ course.category }}</div>
+        <div
+          class="card-body"
+          @click="
+            $router.push({
+              name: 'welearn.course',
+              params: { courseName: course.shortname, courseId: course.id },
+            })
+          "
+        >
+          <div class="flex items-center justify-between">
+            <h2 class="card-title">{{ course.shortname }}</h2>
+            <span v-if="course.category" class="badge badge-secondary">
+              Level {{ course.category }}
+            </span>
           </div>
-          <h2 class="card-title">{{ course.fullname }} {{ course.id }}</h2>
+          <p class="text-lg">
+            {{
+              /* Remove 'MH1111: ' */
+              course.fullname.replace(/\w+: /g, '')
+            }}
+          </p>
         </div>
       </div>
     </div>
