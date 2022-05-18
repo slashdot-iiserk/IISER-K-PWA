@@ -32,11 +32,17 @@ export const WeLearnFetch = {
   },
   courses: async (userid: number) => {
     const data: any[] = await WeLearnClient.getData(SF.USER_COURSES, {
-      userid: userid,
+      userid,
     });
     const result: CoursesResponse[] = data.map((course) =>
       pick(course, ['shortname', 'id', 'fullname', 'category']),
     );
     return result;
+  },
+  course: async (courseid: number) => {
+    const data: any[] = await WeLearnClient.getData(SF.COURSE_CONTENTS, {
+      courseid,
+    });
+    return data;
   },
 };
