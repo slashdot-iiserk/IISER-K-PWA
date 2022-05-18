@@ -1,8 +1,8 @@
 WeLearnFetch
 <script setup lang="ts">
-import { WeLearnFetch } from '@/models/welearn/query';
 import useSWRV from 'swrv';
 import LocalStorageCache from 'swrv/dist/cache/adapters/localStorage';
+import { WeLearnFetch } from '@/models/welearn/fetch';
 
 const localStorageCache = new LocalStorageCache();
 const { data: info, error: infoError } = useSWRV(
@@ -31,7 +31,7 @@ const { data: courses } = useSWRV(
       <div
         v-for="course in courses"
         :key="course.id"
-        class="card-compact card card-bordered border-base-content"
+        class="card card-bordered card-compact border-base-content"
       >
         <div
           class="card-body"

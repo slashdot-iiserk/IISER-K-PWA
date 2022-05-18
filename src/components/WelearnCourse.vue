@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { WeLearnFetch } from '@/models/welearn/query';
 import useSWRV from 'swrv';
+import { WeLearnFetch } from '@/models/welearn/fetch';
 
 const props = defineProps<{
   courseId: number;

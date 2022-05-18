@@ -17,6 +17,13 @@ interface CoursesResponse {
   fullname: string;
   category?: number;
 }
+interface CourseSection {
+  id: number;
+  name: string;
+  modules: CourseModule[];
+}
+type CourseResponse = CourseSection[];
+
 export const WeLearnFetch = {
   info: async () => {
     const data = await WeLearnClient.getData(SF.SITE_INFO);
@@ -43,6 +50,10 @@ export const WeLearnFetch = {
     const data: any[] = await WeLearnClient.getData(SF.COURSE_CONTENTS, {
       courseid,
     });
-    return data;
+    const result: CourseResponse = data.map((section) =>
+      pick(section, ['id', 'name', 'modules']),
+    );
+    console.dir(result);
+    return result;
   },
 };
