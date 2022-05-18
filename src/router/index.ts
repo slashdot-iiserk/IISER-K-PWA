@@ -15,6 +15,15 @@ const router = createRouter({
       component: () => import('../views/WeLearnView.vue'),
     },
     {
+      path: '/welearn/:courseName/:courseId',
+      name: 'welearn.course',
+      component: () => import('../components/WelearnCourse.vue'),
+      props: (route) => ({
+        courseId: parseInt(route.params.courseId),
+        courseName: route.params.courseName,
+      }),
+    },
+    {
       path: '/mess',
       name: 'mess',
       component: () => import('../views/MessView.vue'),
