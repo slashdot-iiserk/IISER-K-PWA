@@ -21,6 +21,7 @@ interface CourseSection {
   id: number;
   name: string;
   modules: CourseModule[];
+  summary: string;
 }
 type CourseResponse = CourseSection[];
 
@@ -51,9 +52,9 @@ export const WeLearnFetch = {
       courseid,
     });
     const result: CourseResponse = data.map((section) =>
-      pick(section, ['id', 'name', 'modules']),
+      pick(section, ['id', 'name', 'modules', 'summary']),
     );
-    console.dir(result);
+    console.dir(data);
     return result;
   },
 };

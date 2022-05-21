@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { WeLearnFetch } from '@/models/welearn/fetch';
 import useCachedFetch from '@/hooks/cachedFetch';
+import ModuleCard from './ModuleCard.vue';
 
 const props = defineProps<{
   courseId: number;
@@ -13,22 +14,30 @@ const [course] = useCachedFetch(`/welearn/course/${props.courseId}`, () =>
 </script>
 
 <template>
-  <span class="text-2xl">{{ props.courseName }}</span>
-  <div class="w-full px-8 py-4 md:px-12">
-    <div v-for="section in course" :key="section.id" class="py-1">
-      <template v-if="section.modules.length !== 0">
-        <div class="sticky top-0 rounded-md bg-neutral-focus px-2 text-xl">
+  <span class="mt-4 text-2xl">{{ props.courseName }}</span>
+  <div class="w-full px-8 md:px-12">
+    <template v-for="section in course" :key="section.id">
+      <div v-if="section.modules.length !== 0" class="my-6">
+        <div
+          class="sticky top-0 mb-2 rounded-md bg-neutral-focus px-2 py-1 text-xl font-bold"
+        >
           {{ section.name }}
         </div>
-        <div
-          v-for="sectionModule in section.modules"
-          :key="sectionModule.id"
-          class="px-4 py-1"
-        >
-          {{ sectionModule.name }}
+        <div class="summary" v-html="section.summary"></div>
+        <div class="grid grid-cols-1 gap-2 lg:grid-cols-2">
+          <ModuleCard
+            v-for="courseModule in section.modules"
+            :key="courseModule.id"
+            :course-module="courseModule"
+          />
         </div>
-      </template>
-    </div>
+      </div>
+    </template>
     <div class="h-16"></div>
   </div>
 </template>
+<style>
+.summary > p > iframe {
+  width: 100%;
+}
+</style>
