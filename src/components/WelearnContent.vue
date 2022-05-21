@@ -17,7 +17,7 @@ const [courses] = useCachedFetch('/welearn/courses', () =>
       <div
         v-for="course in courses"
         :key="course.id"
-        class="card card-bordered card-compact border-base-content"
+        class="card card-bordered card-compact cursor-pointer border-base-content duration-300 ease-in-out hover:scale-105"
       >
         <div
           class="card-body"
