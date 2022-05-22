@@ -20,7 +20,7 @@ interface CoursesResponse {
 interface CourseSection {
   id: number;
   name: string;
-  modules: CourseModule[];
+  modules: any[];
   summary: string;
 }
 type CourseResponse = CourseSection[];
@@ -51,10 +51,44 @@ export const WeLearnFetch = {
     const data: any[] = await WeLearnClient.getData(SF.COURSE_CONTENTS, {
       courseid,
     });
-    const result: CourseResponse = data.map((section) =>
+    const sections = data.map((section) =>
       pick(section, ['id', 'name', 'modules', 'summary']),
     );
+    sections.forEach((section) => {
+      section.modules = section.modules.map((module: any) => {
+        const filtered = pick(module, [
+          'id',
+          'name',
+          'modname',
+          'modicon',
+          'url',
+          'description',
+          'isCompact',
+        ]);
+        switch (module.modname) {
+          case 'url':
+            filtered.url = module.contents[0].fileurl;
+            filtered.isCompact = true;
+            break;
+          case 'resource':
+            filtered.url = `${module.contents[0].fileurl.replace(
+              /forcedownload=1/,
+              '',
+            )}token=${WeLearnClient.token}`;
+            filtered.isCompact = true;
+            break;
+          case 'label':
+            filtered.isCompact = true;
+            break;
+          default:
+            filtered.isCompact = false;
+            break;
+        }
+        // filtered.url;
+        return filtered;
+      });
+    });
     console.dir(data);
-    return result;
+    return sections as CourseResponse;
   },
 };

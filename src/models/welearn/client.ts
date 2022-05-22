@@ -3,7 +3,7 @@ import { appendSearchParams } from '@/utils/urllib';
 import { WeLearnURLs } from './constants';
 
 export const WeLearnClient = {
-  _token: defaultedStorage('token', '') as string,
+  token: defaultedStorage('token', '') as string,
   async login(username: string, password: string) {
     const res = await fetch(
       appendSearchParams(WeLearnURLs.login, {
@@ -21,7 +21,7 @@ export const WeLearnClient = {
     return true;
   },
   saveAuthData(token: string, pToken: string, usr: string, pwd: string) {
-    this._token = token;
+    this.token = token;
     localStorage.setItem('token', token);
     localStorage.setItem('privateToken', pToken);
     localStorage.setItem('username', usr);
@@ -31,7 +31,7 @@ export const WeLearnClient = {
   async getData(site_function: string, params: Record<string, any> = {}) {
     const res = await fetch(
       appendSearchParams(WeLearnURLs.server, {
-        wstoken: this._token,
+        wstoken: this.token,
         wsfunction: site_function,
         ...params,
       }),
