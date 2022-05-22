@@ -20,9 +20,7 @@ import UpdatePrompt from './components/UpdatePrompt.vue';
         <RouterView />
       </template>
       <template v-slot:nav-panel>
-        <ul
-          class="menu menu-compact w-max bg-base-300 p-4 text-lg md:menu-normal"
-        >
+        <ul class="menu w-max bg-base-300 p-4 text-lg">
           <li><RouterLink :to="{ name: 'home' }">Home</RouterLink></li>
           <li><RouterLink :to="{ name: 'welearn' }">WeLearn</RouterLink></li>
           <li><RouterLink :to="{ name: 'mess' }">Mess</RouterLink></li>

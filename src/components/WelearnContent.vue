@@ -13,7 +13,8 @@ const [courses] = useCachedFetch('/welearn/courses', () =>
   <div v-if="!info">Loading</div>
   <div v-else class="w-full px-8 py-4 md:px-12">
     <div class="mb-4 text-center text-2xl">Welcome {{ info.firstname }}</div>
-    <div v-if="courses" class="grid gap-4 grid-cols-auto-64">
+    <div v-if="!courses" class="text-center">Loading Courses</div>
+    <div v-else class="grid grid-flow-row gap-4 grid-cols-auto-64">
       <div
         v-for="course in courses"
         :key="course.id"

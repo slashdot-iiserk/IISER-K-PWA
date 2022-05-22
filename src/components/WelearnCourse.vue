@@ -15,7 +15,8 @@ const [course] = useCachedFetch(`/welearn/course/${props.courseId}`, () =>
 
 <template>
   <span class="mt-4 text-2xl">{{ props.courseName }}</span>
-  <div class="w-full px-8 md:px-12">
+  <div v-if="!course">Loading Details</div>
+  <div v-else class="w-full px-8 md:px-12">
     <template v-for="section in course" :key="section.id">
       <div v-if="section.modules.length !== 0" class="my-6">
         <div
@@ -24,7 +25,7 @@ const [course] = useCachedFetch(`/welearn/course/${props.courseId}`, () =>
           {{ section.name }}
         </div>
         <div class="summary" v-html="section.summary"></div>
-        <div class="grid grid-cols-1 gap-2 lg:grid-cols-2">
+        <div class="grid grid-cols-1 gap-2 xl:grid-cols-2">
           <ModuleCard
             v-for="courseModule in section.modules"
             :key="courseModule.id"
