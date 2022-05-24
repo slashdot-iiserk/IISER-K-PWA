@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import router from '@/router';
+
 const props = defineProps<{
   courseModule: any;
 }>();
@@ -10,6 +12,13 @@ const clickHandler = (courseModule: any) => {
       window.open(courseModule.url);
       break;
     default:
+      router.push({
+        name: 'welearn.module',
+        params: {
+          id: courseModule.id,
+          type: courseModule.modname,
+        },
+      });
       break;
   }
 };
@@ -27,7 +36,7 @@ const clickHandler = (courseModule: any) => {
         class="h-8 w-8 flex-shrink-0 rounded-full"
         :src="props.courseModule.modicon"
       />
-      <div class="cursor-pointer truncate text-lg">
+      <div class="truncate text-lg">
         {{ props.courseModule.name }}
       </div>
     </div>

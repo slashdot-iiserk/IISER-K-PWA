@@ -5,7 +5,6 @@ import ModuleCard from './ModuleCard.vue';
 
 const props = defineProps<{
   courseId: number;
-  courseName: string;
 }>();
 
 const [course] = useCachedFetch(`/welearn/course/${props.courseId}`, () =>
@@ -14,7 +13,7 @@ const [course] = useCachedFetch(`/welearn/course/${props.courseId}`, () =>
 </script>
 
 <template>
-  <span class="mt-4 text-2xl">{{ props.courseName }}</span>
+  <span class="mt-4 text-2xl">Course Page</span>
   <div v-if="!course">Loading Details</div>
   <div v-else class="w-full px-8 md:px-12">
     <template v-for="section in course" :key="section.id">
