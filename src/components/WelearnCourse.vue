@@ -29,6 +29,7 @@ const [course] = useCachedFetch(`/welearn/course/${props.courseId}`, () =>
             v-for="courseModule in section.modules"
             :key="courseModule.id"
             :course-module="courseModule"
+            :course-id="props.courseId"
           />
         </div>
       </div>

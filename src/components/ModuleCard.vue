@@ -2,6 +2,7 @@
 import router from '@/router';
 
 const props = defineProps<{
+  courseId: number;
   courseModule: any;
 }>();
 // const clickHandler = (modname: string, url: string) => {
@@ -15,7 +16,8 @@ const clickHandler = (courseModule: any) => {
       router.push({
         name: 'welearn.module',
         params: {
-          id: courseModule.id,
+          courseId: props.courseId,
+          id: courseModule.instance,
           type: courseModule.modname,
         },
       });

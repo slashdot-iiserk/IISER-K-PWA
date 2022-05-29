@@ -23,10 +23,11 @@ const router = createRouter({
       }),
     },
     {
-      path: '/welearn/:type/:id',
+      path: '/welearn/course/:courseId/:type/:id',
       name: 'welearn.module',
       component: () => import('../components/ModulePage.vue'),
       props: (route) => ({
+        courseId: parseInt(route.params.courseId),
         id: parseInt(route.params.id),
         type: route.params.type,
       }),

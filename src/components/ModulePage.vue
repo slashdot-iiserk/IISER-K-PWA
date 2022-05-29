@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const props = defineProps<{
+  courseId: number;
   id: number;
   type: string;
 }>();
