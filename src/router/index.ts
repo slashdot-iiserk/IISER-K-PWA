@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import HomeView from '../views/HomeView.vue';
+import HomePage from '@/pages/HomePage.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -7,12 +7,12 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomeView,
+      component: HomePage,
     },
     {
       path: '/welearn',
       name: 'welearn',
-      component: () => import('../views/WeLearnView.vue'),
+      component: () => import('../pages/WeLearnPage.vue'),
     },
     {
       path: '/welearn/course/:courseId',
@@ -25,7 +25,7 @@ const router = createRouter({
     {
       path: '/welearn/course/:courseId/:type/:id',
       name: 'welearn.module',
-      component: () => import('../components/ModulePage.vue'),
+      component: () => import('../pages/ModulePage.vue'),
       props: (route) => ({
         courseId: parseInt(route.params.courseId),
         id: parseInt(route.params.id),
@@ -35,7 +35,7 @@ const router = createRouter({
     {
       path: '/mess',
       name: 'mess',
-      component: () => import('../views/MessView.vue'),
+      component: () => import('../pages/MessPage.vue'),
     },
   ],
 });

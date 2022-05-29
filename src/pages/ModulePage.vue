@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import AssignPage from '@/components/AssignPage.vue';
+import AssignPage from '@/pages/AssignPage.vue';
 const props = defineProps<{
   courseId: number;
   id: number;
