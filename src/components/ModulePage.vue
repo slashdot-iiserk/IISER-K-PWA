@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import AssignPage from '@/components/AssignPage.vue';
 const props = defineProps<{
   courseId: number;
   id: number;
@@ -6,5 +7,7 @@ const props = defineProps<{
 }>();
 </script>
 <template>
-  <h1>{{ props.type }} {{ props.id }}</h1>
+  <template v-if="props.type === 'assign'">
+    <AssignPage :course-id="props.courseId" :id="props.id" :type="props.type" />
+  </template>
 </template>
