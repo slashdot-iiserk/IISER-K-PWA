@@ -58,6 +58,7 @@ export const WeLearnFetch = {
       section.modules = section.modules.map((module: any) => {
         const filtered = pick(module, [
           'id',
+          'instance',
           'name',
           'modname',
           'modicon',
@@ -88,7 +89,20 @@ export const WeLearnFetch = {
         return filtered;
       });
     });
-    console.dir(data);
+    // console.dir(data);
     return sections as CourseResponse;
+  },
+  assignments: async (courseid: number) => {
+    const data = await WeLearnClient.getData(SF.ASSIGNMENTS, {
+      'courseids[0]': courseid,
+    });
+    const result: Assignment[] = data.courses[0].assignments;
+    return result;
+  },
+  submission: async (assignid: number) => {
+    const data = await WeLearnClient.getData(SF.ASSIGNMENT_STATUS, {
+      assignid,
+    });
+    return data as SubmissionData;
   },
 };
