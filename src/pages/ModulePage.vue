@@ -8,6 +8,6 @@ const props = defineProps<{
 </script>
 <template>
   <template v-if="props.type === 'assign'">
-    <AssignPage :course-id="props.courseId" :id="props.id" :type="props.type" />
+    <AssignPage :course-id="props.courseId" :id="props.id" :key="props.id" />
   </template>
 </template>
