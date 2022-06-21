@@ -21,9 +21,9 @@ import UpdatePrompt from './components/UpdatePrompt.vue';
       </template>
       <template v-slot:nav-panel>
         <ul class="menu w-max bg-base-300 p-4 text-lg">
-          <li><RouterLink to="/">Home</RouterLink></li>
-          <li><RouterLink to="/welearn">WeLearn</RouterLink></li>
-          <li><RouterLink to="/mess">Mess</RouterLink></li>
+          <li><RouterLink :to="{ name: 'home' }">Home</RouterLink></li>
+          <li><RouterLink :to="{ name: 'welearn' }">WeLearn</RouterLink></li>
+          <li><RouterLink :to="{ name: 'mess' }">Mess</RouterLink></li>
         </ul>
       </template>
     </AppShell>

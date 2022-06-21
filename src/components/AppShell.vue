@@ -23,18 +23,18 @@ import MenuBars from '../components/icons/MenuBars.vue';
       </slot>
     </div>
   </div>
-  <div class="drawer-mobile drawer">
+  <div class="drawer drawer-mobile">
     <input id="drawer-handle" type="checkbox" class="drawer-toggle" />
     <div class="drawer-content flex flex-col items-center">
       <slot name="page-content">
         <!-- Page content here -->
       </slot>
     </div>
-    <nav class="drawer-side">
+    <aside class="drawer-side">
       <label for="drawer-handle" class="drawer-overlay"></label>
       <slot name="nav-panel">
         <!-- Navigation Panel Content -->
       </slot>
-    </nav>
+    </aside>
   </div>
 </template>
